@@ -16,7 +16,9 @@ public class TimeConversion{
 		String formatTime;
 		Integer IntVal = Integer.valueOf(part1);
 		if(part3.charAt(2)==P.charAt(0)){
-			IntVal+=12;
+			if(IntVal!=12){
+				IntVal+=12;			
+			}
 		}else{
 			if(part1.equals("12")){
 				flag = true;
@@ -26,13 +28,19 @@ public class TimeConversion{
 		if(flag){
 			formatTime = "00:"+part2+":"+newPart3;
 		}else{
-			formatTime = String.valueOf(IntVal)+":"+part2+":"+newPart3;	
+			String newPart1 = String.valueOf(IntVal);
+			if(newPart1.length()==1){
+				
+			    formatTime = "0"+newPart1+":"+part2+":"+newPart3;
+			}else{
+				formatTime = newPart1+":"+part2+":"+newPart3;
+			}				
 		}		
 		return formatTime;
 	}
 
     public static void main(String[] args){
-		String a = "06:40:03AM";
+		String a = "12:45:54PM";
 		String time = timeConversion(a);
 		System.out.println(time);
     }	
