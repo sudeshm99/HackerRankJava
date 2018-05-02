@@ -16,25 +16,22 @@ public class Solution {
         int val1=0;
         int val2=0;
         for(int i=0;i<a.length;i++){
-            for(int j=i;j<a[i].length;j++){
+            for(int j=0;j<a[i].length;j++){
               if(i==j){
                 val1+=a[i][j];  
+				
               }                 
             }
         }
-        for(int i=3;i>0;i--){
-            for(int j=i;j>0;j--){
-                if(i==j){
-                    val2+=a[i-1][j-1];
+        for(int i=0;i<a.length;i++){
+			int val=0;
+            for(int j=a[i].length;j>=(a[i].length-i);j--){					
+                    val=a[i][j-1];
                 }
-            }
+				val2+=val;          
         }
-        int val = val1-val2;
-        int absVal = Math.abs(val);
-		System.out.println(val1);
-		System.out.println(val2);
-		System.out.println(val);
-		System.out.println(absVal);
+        int Finalval = val1-val2;
+        int absVal = Math.abs(Finalval);
         return absVal;
 
     }
