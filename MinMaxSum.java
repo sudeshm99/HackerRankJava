@@ -38,9 +38,7 @@ public class MinMaxSum{
 		}
 		for(int j=maxCount;j>1;j--){
 			minSum+=max;
-		}			
-		System.out.println("minCount: "+minCount);
-		System.out.println("maxCount: "+maxCount);		
+		}				
 		System.out.println(minSum+" "+maxSum);
 	}
 
